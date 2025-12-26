@@ -3,9 +3,6 @@
 #    print("I predict True")
 #else:
 #    print("I predict False")
-from email.quoprimime import body_decode
-from idlelib.colorizer import ColorDelegator
-from statistics import median_low
 
 #print("Is car == 'subaru'? I predict True.")
 #print(car == 'subaru')
@@ -95,22 +92,41 @@ from statistics import median_low
 #        print(f"Hello {username.title()}, welcome!")
 
 ##5-10 - Checking Usernames
-current_users = ['admin', 'JACK', 'jIll', 'Morgan', 'alexandra']
-new_users = ['dora', 'michelle', 'nani', 'JILL', 'Alexandra']
+#current_users = ['admin', 'JACK', 'jIll', 'Morgan', 'alexandra']
+#new_users = ['dora', 'michelle', 'nani', 'JILL', 'Alexandra']
 #current_users_upper = [user.upper() for user in current_users]
 #current_users_title = [user.title() for user in current_users]
-current_users_normalized = {user.lower() for user in current_users}
-print(current_users_normalized)
+#current_users_normalized = {user.lower() for user in current_users}
+#print(current_users_normalized)
 
-for users in new_users:
+#for users in new_users:
 #    if users in current_users:
 #        print(f"The user '{users}' has already been used.")
 #    elif users in current_users_upper:
 #        print(f"The user '{users}' has already been used.")
 #    elif users in current_users_title:
 #        print(f"The user '{users}' has already been used.")
-    if users.lower() in current_users_normalized:
-        print(f"The user '{users}' has already been used.")
-    else:
-        print(f"The user '{users}' has not been used.")
+#    if users.lower() in current_users_normalized:
+#        print(f"The user '{users}' has already been used.")
+#    else:
+#        print(f"The user '{users}' has not been used.")
 
+##5-11 Ordinal Numbers
+#numbers = list(range(1,11))
+#for number in numbers:
+#    if number == 1:
+#        print("1st")
+#    elif number == 2:
+#        print("2nd")
+#    elif number == 3:
+#        print("3rd")
+#    else:
+#        print(f"{number}th")
+
+
+
+special_suffixes = {1: "st", 2: "nd", 3: "rd"}
+
+for number in range(1, 11):
+    suffix = special_suffixes.get(number, "th")
+    print(f"{number}{suffix}")
