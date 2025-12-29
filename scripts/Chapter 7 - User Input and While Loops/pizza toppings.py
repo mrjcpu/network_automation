@@ -8,5 +8,6 @@ while active:
     if message == "quit":
         active = False
     else:
-        print(message.title())
+        print(f"\nI will add {message.title()} to your pizza!")
+
 
