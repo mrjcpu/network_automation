@@ -1,0 +1,8 @@
+def make_car(make, model, **kwargs):
+    """Build a dictionary containing information about a car."""
+    kwargs['make'] = make
+    kwargs['model'] = model
+    return kwargs
+
+my_car = make_car('subaru', 'outback', color='blue', tow_package=True, sunroof=False)
+print(my_car)
