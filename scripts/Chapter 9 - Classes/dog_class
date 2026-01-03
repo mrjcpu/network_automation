@@ -1,2 +1,0 @@
-my_dog = Dog('Willie', 6)
-your_dog = Dog('Lucy', 3)
