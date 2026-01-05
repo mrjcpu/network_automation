@@ -19,11 +19,27 @@ class Admin(User):
     """Admin information class"""
     def __init__(self, first_name, last_name, city, state, occupation):
         super().__init__(first_name, last_name, city, state, occupation)
-        self.privileges = ['can add post, can delete post', 'can ban user', 'can gift user']
+    def privileges(self):
+
+class Privileges(Admin)
+    """Privileges for Admin user"""
+    def __init__(self, privileges=None):
+        if privileges is None:
+            self.privileges = [
+                "can add post",
+                "can deleted port",
+                "can ban user",
+                "can ban admin",
+                "can ban user"
+            ]
+        else:
+            self.privileges = privileges
+
     def show_privileges(self):
-        print(f"\nAdmin privileges: ")
+        print("Admin has the following privileges:")
         for privilege in self.privileges:
             print(f"\t{privilege.title()}")
+
 
 user1 = User('Morgan', 'Josepher', 'Gilbert', 'Az', 'Network Engineer')
 user2 = User('Iggy', 'Ramos', 'Descanso', 'Ca', 'Salesman')
