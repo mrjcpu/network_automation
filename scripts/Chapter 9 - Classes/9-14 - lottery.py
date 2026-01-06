@@ -10,3 +10,4 @@ winning_ticket = random.sample(ticket_pool, 10)
 
 print("Any ticket matching these 4 characters wins a prize!")
 print(",".join(winning_ticket))
+

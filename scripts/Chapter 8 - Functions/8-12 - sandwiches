@@ -1,9 +1,0 @@
-def make_sandwich(bread, meat,*condiments):
-    """Summarize the sandwich we are about to make."""
-    print(f"\Making a sandwich on {bread.title()} with {meat.title()} and the following condiments:")
-    for condiment in condiments:
-        print(f"- {condiment.title()}")
-
-make_sandwich('wheat', 'turkey', 'lettuce', 'tomato', 'mayo')
-make_sandwich('rye', 'ham', 'mustard')
-make_sandwich('sourdough', 'roast beef', 'horseradish', 'pickles', 'onions', 'cheese')
