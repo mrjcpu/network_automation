@@ -1,13 +1,16 @@
+#from passlib.utils.compat import native_string_types
+
 class Car:
     """Simple attempt to represent a car."""
+
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
         self.year = year
-        self.odometer_reading = 100
+        self.odometer_reading = 0
 
     def get_descriptive_name(self):
-        descriptive_name = f"{self.year} {self.make} {self.model}"
+        descriptive_name = f"Vehicle: {self.year} {self.make} {self.model}"
         return descriptive_name.title()
 
     def read_odometer(self):
@@ -22,6 +25,7 @@ class Car:
             self.odometer_reading = mileage
         else:
             print("You can't roll back the odometer!")
+
     def increment_odometer(self, miles):
         """Add  the given amount to the odometer reading"""
         self.odometer_reading += miles
@@ -29,7 +33,7 @@ class Car:
 class Battery:
     """A simple attempt to model a battery for an electric car"""
 
-    def __init__(self, battery_size=40):
+    def __init__(self, battery_size=0):
         """Initialize the battery attributes"""
         self.battery_size = battery_size
 
@@ -73,11 +77,28 @@ class ElectricCar(Car):
         """Electric cars do not have gas tanks"""
         print("This car does not have a gas tank!")
 
-#my_new_car = Car('audi', 'a4', 2024)
-#print(my_new_car.get_descriptive_name())
 
-#my_new_car.update_odometer(23_500)
-#my_new_car.read_odometer()
 
-#my_new_car.increment_odometer(10000)
-#my_new_car.read_odometer()
+my_new_car = Car('audi', 'a4', 2024)
+
+print(my_new_car.get_descriptive_name())
+my_new_car.update_odometer(23_500)
+my_new_car.read_odometer()
+my_new_car.increment_odometer(10000)
+my_new_car.read_odometer()
+
+my_leaf = ElectricCar('nissan', 'leaf', 2024)
+print(f"\n{my_leaf.get_descriptive_name()}")
+my_leaf.read_odometer()
+my_leaf.increment_odometer(100)
+my_leaf.read_odometer()
+my_leaf.battery.describe_battery()
+my_leaf.battery.get_range()
+
+my_tesla = ElectricCar('tesla', 'model 3', 2025)
+print(f"\n{my_tesla.get_descriptive_name()}")
+my_tesla.battery.get_range()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.get_range()
+
+
